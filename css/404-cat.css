@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* cat-size */
+.cat-jpg {
+    text-align: center;
+}
+
+.cat-jpg img {
+    max-width: 25%;
+    height: auto;
+}
+
+.message {
+    font-size: 12px;
+    margin-top: 10px;
+}
