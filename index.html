@@ -1,30 +1,29 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>Re&Re Repair&Remake</title>
-<meta name="description" content="服のリペア">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- reset.css ress -->
-<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<!--オリジナルCSS-->
-<link rel="stylesheet" href="css/style.css">    
+    <meta charset="UTF-8">
+    <title>Re&Re Repair&Remake</title>
+    <meta name="description" content="服のリペア">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- reset.css ress -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">    
 </head>
 
 <body>
+    <!-- ヘッダー -->
     <header class="page-header">
         <div class="cover-header">
             <nav class="navbar">
                 <div class="container">
-                    <div class="hamburger-btn"><img src="images/hamburger-btn open.png" alt="menw btn">
+                    <div class="hamburger-btn">
+                        <img src="images/hamburger-btn open.png" alt="menu btn">
                         <ul class="navbar-nav" id="navbar-nav">
-                            <li><a href="#">sumple</a></li>
-                            <li><a href="#">sumple</a></li>
-                            <li><a href="#">sumple</a></li>
+                            <li><a href="#">sample</a></li>
+                            <li><a href="#">sample</a></li>
+                            <li><a href="#">sample</a></li>
                         </ul>
                     </div>
                     <button class="hamburger-btn" id="hamburger-btn">
@@ -37,79 +36,115 @@
                             <a href="Re.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt="Repair&Remake logo"></a>
                         </h1>   
                         <ul class="main-nav font-english">
-                            <li><a href="01.html"><img  class="icon" src="images/newitem.png" alt="Re&Re newitem"></a></li>
+                            <li><a href="01.html"><img class="icon" src="images/newitem.png" alt="Re&Re new item"></a></li>
                             <li><a href="02.html"><img class="icon" src="images/work.png" alt="Re&Re work"></a></li>
                         </ul>
                     </nav>
-                    
-                    
                 </div>
             </nav>
         </div>
     </header>
 
-<body>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- スライダー -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/carousel-fuku-01.png" alt="スライド画像1">
+                </div>
+                <!-- 他のスライドも同様 -->
             </div>
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/carousel-fuku-01.png" alt="">
+            <!-- ページネーション -->
+            <div class="swiper-pagination"></div>
+            <!-- ナビゲーションボタン -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <!-- スクロールバー -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!-- テキスト -->
+        <section class="intro-text large-text">
+            <p>～あなたの思い出繕います～</p>
+            <p>大事に使っていた思いれのあるカバンや帽子、穴が開いてしまったジーンズ。どれも大切な一着を一生ものの一着へと... 
+            <br>「もったいない」や「リサイクル」ということとはまた別の、買った日のこと、一緒に行った家族の笑顔、愛する人からのプレゼント、壊れたあの日のこと。それをもう一度、繕ってみませんか。</p>
+        </section>
+
+        <!-- 手順 -->
+<section class="steps">
+    <div class="steps-container">
+        <div class="qr-text-container">
+            <a href="https://line.me/ti/p/z2fmWn4wdV#~">
+                <img class="qr-code-image" src="images/QRcode.png" alt="QRコード">
+            </a>
+            <div class="steps-text">
+                <h2>リペアの手順</h2>
+                <ol>
+                    <li>手順① QRコードにてLINEの友達追加</li>
+                    <li>手順② お持ちの服の写真を送信</li>
+                    <li>手順③ ご希望のリペア内容をつたえて完了!</li>
+                </ol>
             </div>
         </div>
-        <!-- ページネーション -->
-        <div class="swiper-pagination"></div>
-        
-        <!-- ｢前へ｣｢次へ｣の矢印 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        
-        <!-- スクロールバー -->
-        <div class="swiper-scrollbar"></div>
+        <img class="steps-image" src="images/line.png" alt="リペアの手順">
     </div>
-</body>
-<main>
-    <a>～あなたの思い出繕います～
+</section>
 
-        大事に使っていた思いれのあるカバンや帽子、穴が開いてしまったジーンズ
-        どれも大切な一着を一生ものの一着へと...
-        「もったいない」や「リサイクル」ということとはまた別の
-        買った日のこと、一緒に行った家族の笑顔、愛する人からのプレゼント、
-        壊れたあの日のこと。それをもう一度、繕ってみませんか。</a>
-</main>
-    
-    
-    
+        <!-- リメイク商品 -->
+        <section class="remake">
+            <h2>リメイク商品</h2>
+            <div class="remake-item">
+                <img src="images/remake-01.png" alt="リメイク商品1">
+                <p>リメイク商品1</p>
+            </div>
+            <div class="remake-item">
+                <img src="images/remake-02.png" alt="リメイク商品2">
+                <p>リメイク商品2</p>
+            </div>
+            <div class="remake-item">
+                <img src="images/remake-03.png" alt="リメイク商品3">
+                <p>リメイク商品3</p>
+            </div>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>よくある質問</h2>
+            <div class="faq-item">
+                <h3>Q. どんな服がリペアできますか？</h3>
+                <p>A. リペアできる服は、ジーンズ、カバン、帽子、靴など、基本的には布地のものであれば何でもリペア可能です。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q. どのようなリペアができますか？</h3>
+                <p>A. リペアの内容は、穴の補修、破れの補修、ボタンの付け替え、ファスナーの交換、裾上げ、裾直し、サイズ直し、リメイクなど、お客様のご希望に合わせて対応いたします。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q. リペアの料金はいくらですか？</h3>
+                <p>A. リペアの料金はお持ちの服の状態によって異なります。お見積もりは無料で行っておりますので、お気軽にお問い合わせください。詳細はチラシまたは各SNSにてお知らせしております。</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q. どれくらいでリペアは完了するでしょうか？</h3>
+                <p>A. リペアの内容によって異なりますが、基本的には1週間程度で完了いたします。詳細はチラシまたは各SNSにてお知らせしております。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
     <footer>
         <div class="footer">
             <div>
-                <a href="index.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt=""></a>
-                <a href="https://www.instagram.com/re_and_re_?igsh=cGN2YWtpNnZrNWMx&utm_source=qr"><img class="instagram" src="images/Insta-icon.png" alt=""></a>
+                <a href="index.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt="Re&Re Repair&Remake logo"></a>
+                <a href="https://www.instagram.com/re_and_re_?igsh=cGN2YWtpNnZrNWMx&utm_source=qr"><img class="instagram" src="images/Insta-icon.png" alt="Instagram icon"></a>
             </div>
-            <h6 class="footer-text">  
+            <div class="footer-text">
                 <p>Re&Re Repair&Remake</p>
-                <p>〒000-0000 住所</p>
                 <p>TEL:090-3625-5955</p>
                 <p>営業時間:09:00~18:00</p>
-            </h6>
+            </div>
         </div>
     </footer>
+
+    <!-- スクリプト -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>

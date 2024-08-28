@@ -72,31 +72,14 @@ main {
     display: none !important;
 }
 
-/*フッター
----------------------------------*/
-.footer {
-    background-image: url(../images/footer.png);
-    background-repeat: repeat;
-    background-size: cover;
-    padding: 2.5rem 2rem 7rem 2.5rem;
+body {
     display: flex;
-    justify-content: space-between; 
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.footer-text {
-    max-width: 100%;
-    text-align: right; 
-}
-
-.logo {
-    width: 150px;
-}
-
-
-.instagram {
-    max-width: 18px;
-    display: block;
-    margin: auto; 
+main {
+    flex: 1;
 }
 
 /*スライダー*/
@@ -149,6 +132,132 @@ main {
 
 
 
+/* テキスト部分を大きくする */
+.large-text p {
+    font-size: 1.2em; /* 必要に応じてサイズを調整 */
+    line-height: 1.6; /* 読みやすさのために行間を広げます */
+    margin-bottom: 1em; /* 各段落の間に適度なスペースを設けます */
+    text-align: center; /* テキストを中央揃えにします */
+}
+
+/* QRコード画像の大きさを調整する */
+.qr-code-image {
+    width: 200px; /* 必要に応じてサイズを調整 */
+    height: auto; /* アスペクト比を維持します */
+    margin-bottom: 20px; /* 画像と他の要素との間にスペースを追加します */
+}
+
+/* 手順セクションのレイアウト調整 */
+.steps-container {
+    display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+    justify-content: center; /* 水平方向に中央揃え */
+    gap: 20px; /* 要素間のスペース */
+}
+
+.qr-text-container {
+    display: flex;
+    flex-direction: column; /* QRコードとテキストを縦に並べる */
+    align-items: center; /* 中央揃え */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.qr-code-image {
+    width: 150px; /* 必要に応じてサイズを調整 */
+    height: auto;
+    margin-bottom: 10px; /* QRコードとテキストの間にスペース */
+}
+
+.steps-text {
+    max-width: 350px; /* テキストの最大幅を設定 */
+    text-align: left; /* テキストを左揃えに */
+}
+
+.steps-image {
+    width: 350px; /* 必要に応じてサイズを調整 */
+    height: auto;
+    margin-left: 10px; /* 画像と他の要素との間にスペースを追加 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*フッター
+---------------------------------*/
+.footer {
+    background-image: url(../images/footer.png);
+    background-repeat: repeat;
+    background-size: cover;
+    padding: 2.5rem 2rem 7rem 2.5rem;
+    display: flex;
+    justify-content: space-between; 
+    margin-top: auto;
+}
+
+.footer-text {
+    max-width: 100%;
+    text-align: right; 
+}
+
+.logo {
+    width: 150px;
+}
+
+
+.instagram {
+    max-width: 18px;
+    display: block;
+    margin: auto; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -161,7 +270,7 @@ main {
 /* 携帯サイズ版
 ---------------------------------*/
 @media (max-width: 799px) {
-      /*　見出し */
+    /*　見出し */
     .page-title {
         font-size: 5rem;
     }
@@ -189,5 +298,20 @@ main {
     .swiper-slide img {
         width: 100%;
         height: 150px;
+    }
+
+    .steps-container {
+        flex-direction: column; /* 小さい画面では縦並びにする */
+        align-items: center;
+        text-align: center;
+    }
+
+    .qr-code-image,
+    .steps-image {
+        width: 100px; /* 小さい画面では画像サイズを縮小 */
+    }
+
+    .steps-text {
+        max-width: none; /* 小さい画面では最大幅を解除 */
     }
 }
