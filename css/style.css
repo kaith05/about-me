@@ -33,6 +33,16 @@ body {
 
 /* ヘッダー 
 ---------------------------------*/  
+header {
+    position: fixed; /* 固定配置 */
+    top: 0; /* 上部に固定 */
+    left: 0; /* 左端に固定 */
+    width: 100%; /* 幅を画面全体に */
+    background-color: white; /* ヘッダーの背景色（必要に応じて変更） */
+    z-index: 1000; /* 他の要素より前面に表示 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 影を追加して浮かび上がらせる */
+}
+
 .page-header {
     padding: 0 5rem;
     padding: 0.25rem 2rem 0.25rem;
@@ -75,7 +85,8 @@ main {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 120vh;
+    margin: 0;
 }
 
 main {
@@ -134,50 +145,69 @@ main {
 
 /* テキスト部分を大きくする */
 .large-text p {
-    font-size: 1.2em; /* 必要に応じてサイズを調整 */
+    font-size: 1.2rem; /* 文字サイズを調整 */
     line-height: 1.6; /* 読みやすさのために行間を広げます */
     margin-bottom: 1em; /* 各段落の間に適度なスペースを設けます */
     text-align: center; /* テキストを中央揃えにします */
 }
 
-/* QRコード画像の大きさを調整する */
-.qr-code-image {
-    width: 200px; /* 必要に応じてサイズを調整 */
-    height: auto; /* アスペクト比を維持します */
-    margin-bottom: 20px; /* 画像と他の要素との間にスペースを追加します */
+.highlight-text {
+    font-size: 2.5em; /* 必要に応じてフォントサイズを調整 */
+    font-weight: bold; /* 文字を太字にする場合 */
+    display: block; /* ブロック要素にすることで段落のように扱う */
+    text-align: center; /* テキストを中央揃えにする */
+    margin-top: 1em; /* 上にスペースを追加 */
+    margin-bottom: 1em; /* 下にスペースを追加 */
 }
+
+
 
 /* 手順セクションのレイアウト調整 */
 .steps-container {
-    display: flex;
-    align-items: center; /* 垂直方向に中央揃え */
-    justify-content: center; /* 水平方向に中央揃え */
-    gap: 20px; /* 要素間のスペース */
-}
-
-.qr-text-container {
-    display: flex;
-    flex-direction: column; /* QRコードとテキストを縦に並べる */
-    align-items: center; /* 中央揃え */
-    text-align: center; /* テキストを中央揃え */
-}
-
-.qr-code-image {
-    width: 150px; /* 必要に応じてサイズを調整 */
-    height: auto;
-    margin-bottom: 10px; /* QRコードとテキストの間にスペース */
-}
-
-.steps-text {
-    max-width: 350px; /* テキストの最大幅を設定 */
+    display: flex; /* フレックスボックスで横並びに */
+    align-items: center; /* アイテムを中央揃え */
+    justify-content: center; /* コンテンツを中央に配置 */
+    gap: 0; /* 間隔を0に設定し、境界線で区切る */
+    max-width: 100%; /* 親コンテナの幅を100%に変更 */
+    margin: 0; /* 親コンテナの外側余白を削除 */
+    padding: 0; /* 親コンテナの内側余白を削除 */
+  }
+  
+  .qr-text-container {
+    display: flex; /* Flexboxで内部要素を配置 */
+    flex-direction: column; /* 子要素を縦に並べる */
+    align-items: center; /* 子要素を中央揃えに */
+    justify-content: center; /* コンテナ内の中央に配置 */
+    flex: 0 0 auto; /* コンテナのサイズを内容に応じて調整 */
+    width: 350px; /* 幅を固定値に設定 */
+    padding-right: 1rem; /* 右側に余白を追加 */
+    border-right: 2px dashed #ccc; /* 右側に点線を追加 */
+    height: 420px; /* 高さを自動調整 */
+  }
+  
+  .steps-image {
+    width: 350px; /* 画像の幅を調整 */
+    height: auto; /* アスペクト比を維持します */
+    margin-left: 0; /* 左側の余白を削除 */
+    padding-left: 1rem; /* 画像とテキストの間にスペースを追加 */
+  }
+  
+  /* QRコード画像の大きさを調整する */
+  .qr-code-image {
+    width: 150px; /* QRコードの幅を少し小さく設定 */
+    height: auto; /* アスペクト比を維持します */
+    margin-bottom: 10px; /* QRコードとテキストの間にスペースを追加します */
+  }
+  
+  .steps-text {
+    max-width: 330px; /* テキストの最大幅を設定 */
     text-align: left; /* テキストを左揃えに */
-}
+    margin-top: 10px; /* テキストとQRコードの間にスペースを追加 */
+  }
 
-.steps-image {
-    width: 350px; /* 必要に応じてサイズを調整 */
-    height: auto;
-    margin-left: 10px; /* 画像と他の要素との間にスペースを追加 */
-}
+
+
+
 
 
 
@@ -221,26 +251,26 @@ main {
     background-size: cover;
     padding: 2.5rem 2rem 7rem 2.5rem;
     display: flex;
-    justify-content: space-between; 
-    margin-top: auto;
+    justify-content: space-between;
+    align-items: center; /* 中央揃え */
+    width: 100%; /* 幅を100%に */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
 }
 
 .footer-text {
     max-width: 100%;
-    text-align: right; 
+    text-align: right;
 }
 
 .logo {
     width: 150px;
 }
 
-
 .instagram {
     max-width: 18px;
     display: block;
-    margin: auto; 
+    margin: auto;
 }
-
 
 
 

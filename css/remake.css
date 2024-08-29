@@ -1,0 +1,36 @@
+.remake {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.remake-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列 */
+    grid-gap: 20px; /* 各アイテム間のスペース */
+}
+
+.remake-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+.remake-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.remake-item:hover {
+    transform: scale(1.05);
+}
+
+.remake-item p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
