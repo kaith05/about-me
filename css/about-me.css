@@ -1,11 +1,10 @@
 /* ヘッダー 
 ---------------------------------*/  
 header {
-    position: fixed; /* 固定配置 */
     top: 0; /* 上部に固定 */
     left: 0; /* 左端に固定 */
     width: 100%; /* 幅を画面全体に */
-    height: 80px; /* 高さを80pxに */
+    height: 80px; /* 高さ */
     background-color: white; /* ヘッダーの背景色（必要に応じて変更） */
     z-index: 1000; /* 他の要素より前面に表示 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 影を追加して浮かび上がらせる */
@@ -44,57 +43,16 @@ main {
     
 }
 
-/* リメイク品一覧 */
-.remake {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.remake-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3列 */
-    grid-gap: 20px; /* 各アイテム間のスペース */
-}
-
-.remake-item {
-    text-align: center;
-    border: 1px solid #ddd;
-    padding: 15px;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease;
-}
-
-.remake-item img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px;
-}
-
-.remake-item:hover {
-    transform: scale(1.05);
-}
-
-.remake-item p {
-    margin: 0;
-    font-size: 1.1em;
-    color: #333;
-}
 
 
-
-
-
-
-
-body {
+.hero-content {
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    min-height: 280vh;
-}
-main {
-    flex: 1 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
 }
 
 
@@ -134,12 +92,35 @@ main {
 }
 
 
-/* 携帯サイズ版
+
+
+
+/*フッター
 ---------------------------------*/
-@media (max-width: 799px) {
-    /* リメイク商品のレイアウト */
-    .remake-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2列表示に変更 */
-        grid-gap: 10px; /* 各アイテム間のスペースを縮小 */
-    }
+.footer {
+    background-image: url(../images/footer.png);
+    background-repeat: repeat;
+    background-size: cover;
+    padding: 2.5rem 2rem 7rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 中央揃え */
+    width: 100%; /* 幅を100%に */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    flex-shrink: 0;
+}
+
+.footer-text {
+    max-width: 100%;
+    text-align: right;
+}
+
+.logo {
+    width: 150px;
+}
+
+.instagram {
+    max-width: 18px;
+    display: block;
+    margin: auto;
 }

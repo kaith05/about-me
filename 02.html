@@ -1,12 +1,66 @@
 <html lang="ja">
     <head>
-        <!--オリジナルCSS-->
-        <link rel="stylesheet" href="css/404-cat.css">  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>リメイク商品</title>
+        <!-- reset.css ress -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <!-- CSSファイルを読み込む -->
+        <link rel="stylesheet" href="css/contact.css">
     </head>
-    <body>
-        <div class="cat-jpg">
-            <img src="images/404-cat.jpg" alt="404猫">
-            <p class="message">鋭気製作中ですご迷惑おかけします</p>
+<body>
+    <!-- ヘッダー -->
+    <header class="page-header">
+                    <nav class="header-layout">
+                        <h1 class="align-center">
+                            <a href="index.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt="Repair&Remake logo"></a>
+                        </h1>   
+                    </nav>
+    </header>
+    <!-- キャッチコピー -->
+    <main style="margin-top: 60px;"> <!-- ヘッダーの高さに応じて調整 -->
+    
+    <div class="cover cover-contact">
+        <div class="hero-content">
+            <h2 class="page-title">お問い合わせ</h2>
+            <p>ご質問やご依頼は、こちらのフォームからご連絡ください。</p>
         </div>
-    </body>
+    </div>
+        <!-- メインコンテンツ -->
+        <main class="wrapper">
+            <!-- お問い合わせセクション -->
+            <section class="contact">
+                <h2>お問い合わせフォーム</h2>
+                <form action="submit_contact.php" method="post" class="contact-form">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">メッセージ</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn-primary">送信する</button>
+                </form>
+            </section>
+        </main>
+    </main>
+    <!-- フッター -->
+    <footer>
+        <div class="footer">
+            <div>
+                <a href="index.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt="Re&Re Repair&Remake logo"></a>
+                <a href="https://www.instagram.com/re_and_re_?igsh=cGN2YWtpNnZrNWMx&utm_source=qr"><img class="instagram" src="images/Insta-icon.png" alt="Instagram icon"></a>
+            </div>
+            <div class="footer-text">
+                <p>Re&Re Repair&Remake</p>
+                <p>TEL:090-3625-5955</p>
+                <p>営業時間:09:00～18:00</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
