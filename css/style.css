@@ -92,7 +92,6 @@ body {
 
 main {
     flex: 1 0 auto;
-    margin: 50px auto 50px;
 }
 
 /*スライダー*/
@@ -214,7 +213,9 @@ main {
     margin-top: 10px; /* テキストとQRコードの間にスペースを追加 */
   }
 
-
+  li{
+    list-style:none;
+  }
 
 
 
@@ -379,6 +380,7 @@ main {
             height: 150px; /* 高さを適切に設定 */
             position: relative;
         }
+    
         .swiper-slide img {
             width: 100%;
             height: 100%; 
@@ -387,19 +389,24 @@ main {
     
     
     /* 手順 */
+
     .steps-container {
         flex-direction: column; 
-        align-items: center;
-        text-align: center;
-    }
-    
-    .steps-container {
-        flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 1rem;
     }
     
+    .steps-image {
+        width: 100%;
+        max-width: 350px;
+        padding-left: 0;
+    }
+
+    li{
+        list-style:none;
+      }
+
     .intro-text {
         font-size: 1.5rem; /* 必要に応じてフォントサイズを調整 */
         font-weight: bold; /* 文字を太字にする場合 */
@@ -423,11 +430,6 @@ main {
         margin-bottom: 1em; /* 下にスペースを追加 */
     }
 
-.steps-image {
-    width: 100%;
-    max-width: 350px;
-    padding-left: 0;
-}
 
 .qr-text-container {
     width: 350px; /* 幅を固定値に設定 */
