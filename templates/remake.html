@@ -1,91 +1,40 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>リメイク商品</title>
-    <!-- reset.css ress -->
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <!-- CSSファイルを読み込む -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/remake.css">
-</head>
-<body>
-<!-- ヘッダー -->
-<header class="page-header">
-                <nav class="header-layout">
-                    <h1 class="align-center">
-                        <a href="index.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt="Repair&Remake logo"></a>
-                    </h1>   
-                </nav>
-</header>
-    <main> 
-<!-- リメイク商品 -->
-<section class="remake">
-    <h2>リメイク商品</h2>
-    <div class="remake-grid">
-        <div class="remake-item">
-            <img src="remake-images/remake01.jpg" alt="リメイク商品1">
-            <p>リメイク商品1</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake02.jpg" alt="リメイク商品2">
-            <p>リメイク商品2</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake03.jpg" alt="リメイク商品3">
-            <p>リメイク商品3</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake04.jpg" alt="リメイク商品4">
-            <p>リメイク商品4</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake05.jpg" alt="リメイク商品5">
-            <p>リメイク商品5</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake06.jpg" alt="リメイク商品6">
-            <p>リメイク商品6</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake07.jpg" alt="リメイク商品7">
-            <p>リメイク商品7</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake08.jpg" alt="リメイク商品8">
-            <p>リメイク商品8</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake09.jpg" alt="リメイク商品9">
-            <p>リメイク商品9</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake10.jpg" alt="リメイク商品10">
-            <p>リメイク商品10</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake11.jpg" alt="リメイク商品11">
-            <p>リメイク商品11</p>
-        </div>
-        <div class="remake-item">
-            <img src="remake-images/remake12.jpg" alt="リメイク商品12">
-            <p>リメイク商品12</p>
-        </div>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}リメイク商品 | Re&Re Repair&Remake{% endblock %}
+
+{% block content %}
+<div class="w-full bg-amber-50/50 border-b border-gray-100 py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4 space-y-3">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-wider">REMAKE PRODUCTS</h1>
+        <p class="text-gray-600 font-light text-sm md:text-base">
+            思い出の詰まったお洋服や小物を、新しく生まれ変わらせた作品たちです。
+        </p>
     </div>
-    </main>
-    <!-- フッター -->
-    <footer>
-        <div class="footer">
-            <div>
-                <a href="index.html"><img class="logo" src="images/logo-yoko-kuromaki.png" alt="Re&Re Repair&Remake logo"></a>
-                <a href="https://www.instagram.com/re_and_re_?igsh=cGN2YWtpNnZrNWMx&utm_source=qr"><img class="instagram" src="images/Insta-icon.png" alt="Instagram icon"></a>
+</div>
+
+<main class="max-w-6xl mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+        {% for image_name in images %}
+        <div class="group bg-white rounded-xl overflow-hidden border border-gray-200 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            
+            <div class="aspect-[3/2] w-full bg-gray-50 overflow-hidden relative border-b border-gray-100">
+                <img src="{% static 'remake-images/' %}{{ image_name }}" alt="リメイク商品" class="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-500">
+                <div class="absolute inset-0 bg-black/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div class="footer-text">
-                <p>Re&Re Repair&Remake</p>
-                <p>TEL:090-3625-5955</p>
-                <p>営業時間:09:00～18:00</p>
+            
+            <div class="p-4 bg-white">
+                <p class="text-gray-800 font-medium text-sm tracking-wide">リメイク作品</p>
             </div>
+            
         </div>
-    </footer>
-</body>
-</section>
+        {% empty %}
+        <div class="col-span-full text-center py-12">
+            <p class="text-gray-400">現在、公開できるリメイク商品がありません。</p>
+        </div>
+        {% endfor %}
+
+    </div>
+</main>
+{% endblock %}

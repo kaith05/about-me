@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,5 +14,5 @@ urlpatterns = [
     # よくある質問 (faq.html)
     path('faq/', TemplateView.as_view(template_name='faq.html'), name='faq'),
     # リメイクページ (remake.html)
-    path('remake/', TemplateView.as_view(template_name='remake.html'), name='remake'),
+    path('remake/', TemplateView.as_view('remake/', views.remake_gallery, name='remake'), name='remake'),
 ]
