@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}トップページ | Re&Re Repair&Remake{% endblock %}
+
+{% block content %}
+<!-- ⭕ 作成したカルーセルコンポーネントを一番上に配置 -->
+{% include 'components/carousel.html' %}
+
+<!-- 全体を包むコンテナ（カルーセルがあるため、上の余白を py-12 に微調整しました） -->
+<div class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+
+    <!-- PCでは左右2カラム、スマホでは1カラム -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        
+        <!-- ================= 左側エリア ================= -->
+        <div class="md:col-span-7 space-y-12">
+            
+            <!-- あなたの思い出（キャッチコピー） -->
+            <div class="text-center md:text-left space-y-4">
+                <p class="text-amber-600 font-semibold text-base tracking-widest">
+                    〜あなたの思い出繕います〜
+                </p>
+                <p class="text-gray-700 text-base md:text-lg leading-relaxed font-light">
+                    大事に使っていたカバンや帽子、穴が開いてしまったジーンズ。大切な一着を一生ものの一着へと…<br class="hidden md:inline">
+                    買った日のこと、愛する人からのプレゼント、壊れたあの日のこと。それらをもう一度、繕ってみませんか。
+                </p>
+            </div>
+
+            <!-- 手順表 -->
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-xs space-y-4">
+                <h2 class="text-xl font-bold text-gray-900 tracking-wider border-b border-gray-100 pb-2">
+                    リペアの手順
+                </h2>
+                <ul class="space-y-4 text-gray-700 text-base font-light">
+                    <li class="flex items-center gap-3">
+                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-medium rounded shrink-0">手順①</span>
+                        <span>QRコードにてLINEの友達追加</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-medium rounded shrink-0">手順②</span>
+                        <span>お持ちの服の写真を送信</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-medium rounded shrink-0">手順③</span>
+                        <span>ご希望のリペア内容をつたえて完了！</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- ================= 右側エリア ================= -->
+        <div class="md:col-span-5 flex flex-col items-center gap-6 w-full">
+            
+            <!-- 右寄り：line.png -->
+            <div class="p-2 bg-white border border-gray-100 rounded-3xl shadow-md max-w-[280px] w-full">
+                <img src="{% static 'images/line.png' %}" alt="LINEでのやり取りイメージ" class="w-full h-auto rounded-2xl object-contain block">
+            </div>
+
+            <!-- line.pngの下：QRコード -->
+            <div class="flex flex-col items-center bg-white p-5 rounded-2xl shadow-sm border border-gray-100 max-w-[280px] w-full text-center">
+                <img src="{% static 'images/QRcode.png' %}" alt="LINE QRコード" class="w-24 h-24 object-contain">
+                <p class="text-xs font-bold text-gray-800 mt-3">公式LINEでお気軽相談！</p>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed">
+                    スマホで読み取って友だち追加してください。
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

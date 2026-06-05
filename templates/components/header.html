@@ -1,0 +1,73 @@
+{% load static %}
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-20 flex justify-between items-center">
+        
+        <div class="flex items-center">
+            <a href="{% url 'index' %}" class="flex items-center">
+                <img class="h-10 w-auto" src="{% static 'images/logo-yoko-kuromaki.png' %}" alt="Repair&Remake logo">
+            </a>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+            <a href="{% url 'about-me' %}" class="hover:text-amber-600 transition flex items-center gap-1">
+                <img class="h-5 w-auto" src="{% static 'images/newitem.png' %}" alt="New Item">
+                <span>About Me</span>
+            </a>
+            <a href="{% url 'contact' %}" class="hover:text-amber-600 transition flex items-center gap-1">
+                <img class="h-5 w-auto" src="{% static 'images/work.png' %}" alt="Work">
+                <span>Contact</span>
+            </a>
+            <a href="{% url 'faq' %}" class="hover:text-amber-600 transition">FAQ</a>
+            <a href="{% url 'remake' %}" class="hover:text-amber-600 transition">Remake</a>
+        </nav>
+
+        <button id="mobile-menu-btn" class="block md:hidden text-gray-700 hover:text-amber-600 focus:outline-none z-50" aria-label="メニューを開閉">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path id="menu-line-1" class="transition-all duration-300 origin-center" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
+                <path id="menu-line-2" class="transition-all duration-300" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"></path>
+                <path id="menu-line-3" class="transition-all duration-300 origin-center" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner">
+        <a href="{% url 'about-me' %}" class="block text-gray-700 hover:text-amber-600 font-medium py-1">About Me</a>
+        <a href="{% url 'contact' %}" class="block text-gray-700 hover:text-amber-600 font-medium py-1">Contact</a>
+        <a href="{% url 'faq' %}" class="block text-gray-700 hover:text-amber-600 font-medium py-1">FAQ</a>
+        <a href="{% url 'remake' %}" class="block text-gray-700 hover:text-amber-600 font-medium py-1">Remake</a>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // アニメーションさせる3本の線を取得
+        const line1 = document.getElementById('menu-line-1');
+        const line2 = document.getElementById('menu-line-2');
+        const line3 = document.getElementById('menu-line-3');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', function () {
+                // 1. メインメニューの開閉（hiddenの付け外し）
+                mobileMenu.classList.toggle('hidden');
+
+                // 2. 三本線ボタンを「✕」に変形させる処理
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                
+                if (isOpen) {
+                    // 開いたとき：1本目と3本目を斜めにクロスさせ、2本目を透明にする
+                    line1.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                    line2.style.opacity = '0';
+                    line3.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                } else {
+                    // 閉じたとき：元の三本線に戻す
+                    line1.setAttribute('d', 'M4 6h16');
+                    line2.style.opacity = '1';
+                    line3.setAttribute('d', 'M4 18h16');
+                }
+            });
+        }
+    });
+</script>

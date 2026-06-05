@@ -1,0 +1,99 @@
+{% load static %}
+<div class="w-full bg-gray-50 border-b border-gray-100 py-8">
+    
+    <div class="max-w-7xl mx-auto px-4 relative group">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full items-center">
+            
+            <div class="hidden md:block rounded-xl overflow-hidden shadow-xs border-2 border-gray-900 bg-white">
+                <img id="carousel-image-left" src="" alt="Re&Re スライド左" class="w-full h-auto block transition-all duration-300">
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-xs border-2 border-gray-900 bg-white">
+                <img id="carousel-image-center" src="" alt="Re&Re スライド中央" class="w-full h-auto block transition-all duration-300">
+            </div>
+
+            <div class="hidden md:block rounded-xl overflow-hidden shadow-xs border-2 border-gray-900 bg-white">
+                <img id="carousel-image-right" src="" alt="Re&Re スライド右" class="w-full h-auto block transition-all duration-300">
+            </div>
+
+        </div>
+
+        <button type="button" onclick="prevSlide()" 
+                class="absolute left-6 top-1/2 -translate-y-1/2 hover:opacity-80 active:scale-95 transition shrink-0 z-10" 
+                aria-label="前の画像へ">
+            <img src="{% static 'images/左ボタン.png' %}" alt="前へ" class="h-12 w-auto filter drop-shadow-md">
+        </button>
+        
+        <button type="button" onclick="nextSlide()" 
+                class="absolute right-6 top-1/2 -translate-y-1/2 hover:opacity-80 active:scale-95 transition shrink-0 z-10" 
+                aria-label="次の画像へ">
+            <img src="{% static 'images/右ボタン.png' %}" alt="次へ" class="h-12 w-auto filter drop-shadow-md">
+        </button>
+        
+    </div>
+</div>
+
+<script>
+    const slides = [
+        "{% static 'images/carousel-fuku-01.png' %}",
+        "{% static 'images/carousel-fuku-02.png' %}",
+        "{% static 'images/carousel-fuku-03.png' %}",
+        "{% static 'images/carousel-fuku-04.png' %}"
+    ];
+    
+    let currentIndex = 0; 
+    
+    const imgLeft = document.getElementById('carousel-image-left');
+    const imgCenter = document.getElementById('carousel-image-center');
+    const imgRight = document.getElementById('carousel-image-right');
+    
+    let autoPlayTimer; 
+
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(nextSlide, 4000); 
+    }
+
+    function resetTimer() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+        resetTimer(); 
+    }
+
+    function updateCarousel() {
+        const leftIndex = (currentIndex - 1 + slides.length) % slides.length;
+        const rightIndex = (currentIndex + 1) % slides.length;
+
+        // ほんのりフェード
+        imgCenter.style.opacity = 0.5;
+        if(imgLeft) imgLeft.style.opacity = 0.5;
+        if(imgRight) imgRight.style.opacity = 0.5;
+
+        setTimeout(() => {
+            imgCenter.src = slides[currentIndex];
+            if(imgLeft) imgLeft.src = slides[leftIndex];
+            if(imgRight) imgRight.src = slides[rightIndex];
+
+            imgCenter.style.opacity = 1;
+            if(imgLeft) imgLeft.style.opacity = 1;
+            if(imgRight) imgRight.style.opacity = 1;
+        }, 150);
+    }
+
+    document.querySelector('button[onclick="nextSlide()"]').addEventListener('click', () => {
+        resetTimer();
+    });
+
+    updateCarousel();
+    startAutoPlay();
+</script>
